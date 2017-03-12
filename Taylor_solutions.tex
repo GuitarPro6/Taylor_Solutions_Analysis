@@ -2279,6 +2279,22 @@ If $x$ is fixed at zero $\frac{\partial u}{\partial x} = 0$ and if $y$ is fixed 
 \end{exercise}
 
 
+\begin{exercise}{9.3.7}
+Do the precding exercise in the special case where\newline
+\begin{center}
+$x = as + bt$ and $y=cs+dt$ 
+\end{center}
+for some constatnts $a,b,c,d$.
+\begin{proof}
+The differential for these two equations is $\begin{pmatrix}
+a & b \\
+c & d\\
+\end{pmatrix}$
+Using the equations from the previous exercise, $\frac{\partial u}{\partial s} = \frac{\partial u}{\partial x}(a) + \frac{\partial u}{\partial y}(c)$ and $\frac{\partial u}{\partial t} = \frac{\partial u}{\partial x}(b) + \frac{\partial u}{\partial y}(d)$
+\end{proof}
+\end{exercise}
+
+
 
 \begin{exercise}{9.3.8}
 	If $F(x,y) = \left( f_1 (x,y), f_2 (x, y) \right)$ is a differentiable function from $\R^2$ to $\R^2$ and if we define $G: \R^2 \to \R^2$ by $G(s, t) = F(s t, s+t)$, find an expression for the differential matrix of $G$ in terms of the partial derivatives of $f_1, f_2$.
@@ -2305,6 +2321,13 @@ If $x$ is fixed at zero $\frac{\partial u}{\partial x} = 0$ and if $y$ is fixed 
 	\end{align*}
 \end{exercise}
 
+
+\begin{exercise}{9.3.11} Show that if $F$ is a differentiable function on an open set $U\subset \R^p$ with values in $\R^q$, then the real valued function $\norm{F(x)}^2$ on $U$ has a zero differential at $x$ if and only if the vector $F(x)$ is orthogonal to each of the columns of $dF(x)$.
+\begin{proof}
+We (personal pronoun) know that the function $F$ is differentiable on its domain U. That means given a point $a \in U$ $dF(a)$ exists. First we will prove the implication about the function $\norm{F(x)}^2$ having a zero differential at $x$ implies $F$ is orthogonal to $dF$. By definition $\norm{F(x)}^2 = \langle F(x), F(x) \rangle$. This is the inner product of $F$ with itself. We know from the chain rule that given two differentiable functions $F$ and $G$, and a point $a$ in their domains, $dF(F\cdot G)(a) = G(a)dF(a) + F(a)dG(a)$. Plugging $F$ in for $G$ and $x$ for $a$ we get $d(F\cdot F)(x) = F(x)dF(x) + F(x)dF(x) = 2F(x)dF(x) = 0$ (given). Note that $2F(x)dF(x) = 0$ iff $F \cdot dF(x) = 0$. This is the dot product of the vectors in $F$ with the vectors in $dF$ which is only $0$ if the rows of $F$ are orthogonal to the columns of $dF$. Thus the vector $F(x)$ is orthogonal to each of the columns of $dF(x)$.
+Now we will assume that the vector $F(x)$ is orthogonal to each of the columns of $dF(x)$. $F \cdot dF(x) = 0$ $\to 2F(x)\cdot dF(x) = 0 \to F(x)\cdot dF(x) + F(x)\cdot dF(x) = 0 \to d(F(x)\cdot F(x)) = 0 \to d(\langle F(x),F(x)\rangle) = 0 \to d(\norm{F(x)}^2) = 0$. Thus the function $\norm{F(x)}^2$ has a zero differential. 
+\end{proof}
+\end{exercise}
 
 
 
